@@ -108,11 +108,7 @@
 </script>
 <script type="text/javascript" src="//pawgleamed.com/a36fdd372e41b75d0538361ee9fb914f/invoke.js"></script><center>
   <div class="video-container">
-    <!-- Banner Iklan -->
-    <div class="ad-banner" id="adBanner">
-
     </div>
-
     <!-- Video Player -->
     <video controls poster="" id="videoPlayer">
       <source src="https://cdn.videy.co/Eu90W0Vk1.mp4" type="video/mp4">
@@ -121,21 +117,10 @@
   </div>
 
   <script>
-    const adBanner = document.getElementById('adBanner');
-    const closeAd = document.getElementById('closeAd');
 
-    // Tutup iklan saat tombol X ditekan
-    closeAd.addEventListener('click', () => {
-      adBanner.classList.add('hidden');
-    });
-
-    // Opsional: sembunyikan iklan otomatis setelah 8 detik
-    setTimeout(() => {
-      adBanner.classList.add('hidden');
-    }, 8000);
-  </script>
 
 </body>
 </html>
+
 
 
