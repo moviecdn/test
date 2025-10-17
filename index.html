@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I ain’t flexin... just testifyin wit style 😇🧡</title>
+  <title>Not every curve needs a road to show up 😏🚦</title>
   <style>
     body {
       background-color: #000;
@@ -68,7 +68,15 @@
   </style>
 </head>
 <body>
-<center><script type="text/javascript">
+
+  <div class="video-container">
+    <video id="myVideo" controls>
+      <source src="https://cdn.videy.co/9DASm9hT1.mp4" type="video/mp4">
+      Browser Anda tidak mendukung pemutar video.
+    </video>
+
+    <div class="ad-banner" id="adBanner">
+<script type="text/javascript">
 	atOptions = {
 		'key' : 'a36fdd372e41b75d0538361ee9fb914f',
 		'format' : 'iframe',
@@ -77,14 +85,7 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//pawgleamed.com/a36fdd372e41b75d0538361ee9fb914f/invoke.js"></script><center>
-  <div class="video-container">
-    <video id="myVideo" controls>
-      <source src="https://cdn.videy.co/VLIMCmfV1.mp4" type="video/mp4">
-      Browser Anda tidak mendukung pemutar video.
-    </video>
-
-
+<script type="text/javascript" src="//pawgleamed.com/a36fdd372e41b75d0538361ee9fb914f/invoke.js"></script>
     </div>
   </div>
 
@@ -92,24 +93,7 @@
     const video = document.getElementById('myVideo');
     const adBanner = document.getElementById('adBanner');
 
-    // Tampilkan iklan 5 detik setelah video mulai diputar
-    video.addEventListener('play', () => {
-      setTimeout(() => {
-        adBanner.style.display = 'flex';
-      }, 1000);
-    });
 
-    // Tutup iklan secara manual
-    function closeAd() {
-      adBanner.style.display = 'none';
-    }
-
-    // Opsional: sembunyikan iklan otomatis setelah 10 detik
-    video.addEventListener('play', () => {
-      setTimeout(() => {
-        adBanner.style.display = 'none';
-      }, 1500000000);
-    });
   </script>
    <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
