@@ -3,93 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page Iklan Adsterra + Video Player</title>
+  <title>Video Player Sederhana</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: "Poppins", Arial, sans-serif;
-      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 480px;
-      margin: 20px auto;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-
-    /* Bagian iklan banner */
-    .banner-ads {
-      width: 100%;
-      height: 90px;
-      background: #fafafa;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      border-bottom: 1px solid #ddd;
-      position: relative;
+      min-height: 100vh;
     }
 
-    /* Video player */
-    .video-player {
-      position: relative;
-      background: #000;
+    .video-container {
+      width: 60%;
+      max-width: 720px;
+      background-color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
-    video, iframe {
+    video {
       width: 100%;
-      height: 260px;
+      height: auto;
       display: block;
-      border: none;
+      background-color: #000;
     }
 
-    /* Judul dan deskripsi */
-    .content {
-      padding: 16px;
-    }
-
-    .content h2 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: #333;
-    }
-
-    .content p {
-      margin: 0;
-      color: #555;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    /* Footer */
-    footer {
+    .title {
+      margin-top: 10px;
       text-align: center;
-      padding: 15px;
-      font-size: 13px;
-      color: #888;
-    }
-
-    @media (max-width: 480px) {
-      video, iframe {
-        height: 220px;
-      }
-      .banner-ads {
-        height: 70px;
-      }
+      font-size: 18px;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <!-- Bagian Banner Iklan -->
     <div class="ad-banner" id="adBanner">
 <script type="text/javascript">
 	atOptions = {
@@ -102,32 +55,15 @@
 </script>
 <script type="text/javascript" src="//pawgleamed.com/a36fdd372e41b75d0538361ee9fb914f/invoke.js"></script>
     </div>
-    </div>
-
-    <!-- Bagian Video Player -->
-    <div class="video-player">
-      <!-- Bisa ganti ke <video> HTML5 atau YouTube iframe -->
-      <iframe 
-        src="https://cdn.videy.co/Eu90W0Vk1.mp4" 
-        title="Video Promosi"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <!-- Konten Deskripsi -->
-    <div class="content">
-      <h2>Tonton Video dan Dapatkan Hadiahnya!</h2>
-      <p>
-        Watch Videos and Earn!
-Enjoy exciting promotional videos from our sponsors. After watching, click the ad above to learn about our sponsor's special promotions.
-      </p>
-    </div>
+  <div class="video-container">
+    <video controls poster="" preload="metadata">
+      <!-- 🔽 Ganti link video di bawah ini dengan file milikmu -->
+      <source src="https://cdn.videy.co/Eu90W0Vk1.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video HTML5.
+    </video>
   </div>
 
-  <footer>
-    © 2025 - Landing Page by Hermoer | All rights reserved
-  </footer>
+  <div class="title">Contoh Video Player HTML5</div>
 
 </body>
 </html>
-
