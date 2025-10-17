@@ -3,79 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Not every curve needs a road to show up 😏🚦</title>
+  <title>Iframe Video Player dengan Iklan</title>
   <style>
-    body {
-      background-color: #000;
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      background: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Pembungkus utama dua bingkai */
+    .iframe-wrapper {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
       height: 100vh;
-      font-family: sans-serif;
-    }
-
-    .video-container {
-      position: relative;
-      width: 90%;
-      max-width: 600px;
-    }
-
-    video {
       width: 100%;
-      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    /* Bagian atas untuk iklan */
+    .ad-frame {
+      flex: 0 0 90px; /* tinggi iklan */
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid #ddd;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    /* Isi banner iklan */
+    .ad-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 95%;
+      max-width: 800px;
+      padding: 10px;
+      background: linear-gradient(90deg, #fff, #fdf0f5);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .ad-text {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .ad-link {
+      background: #e91e63;
+      color: #fff;
+      padding: 6px 10px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    /* Bagian bawah untuk video */
+    .video-frame {
+      flex: 1;
+      background: #000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
       display: block;
     }
 
-    /* Banner iklan di dalam video */
-    .ad-banner {
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      animation: fadeIn 0.5s ease-in;
-    }
-
-    .ad-banner img {
-      height: 30px;
-      border-radius: 4px;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    .close-ad {
-      background: red;
-      border: none;
-      color: #fff;
-      font-size: 12px;
-      padding: 3px 6px;
-      border-radius: 5px;
-      cursor: pointer;
+    @media (max-width: 480px) {
+      .ad-frame {
+        flex: 0 0 70px;
+      }
+      .ad-text {
+        font-size: 13px;
+      }
+      .ad-link {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="video-container">
-    <video id="myVideo" controls>
-      <source src="https://cdn.videy.co/9DASm9hT1.mp4" type="video/mp4">
-      Browser Anda tidak mendukung pemutar video.
-    </video>
-
-    <div class="ad-banner" id="adBanner">
+  <div class="iframe-wrapper">
+    <!-- Bagian atas: iklan -->
+    <div class="ad-frame">
+      <div class="ad-banner">
+        <div class="ad-text">
 <script type="text/javascript">
 	atOptions = {
 		'key' : 'a36fdd372e41b75d0538361ee9fb914f',
@@ -86,43 +104,19 @@
 	};
 </script>
 <script type="text/javascript" src="//pawgleamed.com/a36fdd372e41b75d0538361ee9fb914f/invoke.js"></script>
+      </div>
+    </div>
+
+    <!-- Bagian bawah: video player -->
+    <div class="video-frame">
+      <!-- Iframe video, bisa ganti link YouTube, Vimeo, atau video HTML -->
+      <iframe 
+        src="https://cdn.videy.co/Eu90W0Vk1.mp4" 
+        title="Video Player" 
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 
-  <script>
-    const video = document.getElementById('myVideo');
-    const adBanner = document.getElementById('adBanner');
-
-    // Tampilkan iklan 5 detik setelah video mulai diputar
-    video.addEventListener('play', () => {
-      setTimeout(() => {
-        adBanner.style.display = 'flex';
-      }, 000);
-    });
-
-    // Tutup iklan secara manual
-    function closeAd() {
-      adBanner.style.display = 'none';
-    }
-
-    // Opsional: sembunyikan iklan otomatis setelah 10 detik
-    video.addEventListener('play', () => {
-      setTimeout(() => {
-        adBanner.style.display = 'none';
-      }, 1500000000);
-    });
-  </script>
-   <!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4957146,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4957146&101" alt="free tracking" border="0"></a></noscript>
-<!-- Histats.com  END  -->
 </body>
 </html>
