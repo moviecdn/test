@@ -3,98 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iframe Video Player dengan Iklan</title>
+  <title>Landing Page Iklan Adsterra + Video Player</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      background: #000;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Pembungkus utama dua bingkai */
-    .iframe-wrapper {
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f5f5f5;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      align-items: center;
+    }
+
+    .container {
       width: 100%;
+      max-width: 480px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       overflow: hidden;
     }
 
-    /* Bagian atas untuk iklan */
-    .ad-frame {
-      flex: 0 0 90px; /* tinggi iklan */
-      background: #fff;
+    /* Bagian iklan banner */
+    .banner-ads {
+      width: 100%;
+      height: 90px;
+      background: #fafafa;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-bottom: 2px solid #ddd;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      border-bottom: 1px solid #ddd;
+      position: relative;
     }
 
-    /* Isi banner iklan */
-    .ad-banner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 95%;
-      max-width: 800px;
-      padding: 10px;
-      background: linear-gradient(90deg, #fff, #fdf0f5);
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .ad-text {
-      font-size: 14px;
-      color: #333;
-    }
-
-    .ad-link {
-      background: #e91e63;
-      color: #fff;
-      padding: 6px 10px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    /* Bagian bawah untuk video */
-    .video-frame {
-      flex: 1;
+    /* Video player */
+    .video-player {
+      position: relative;
       background: #000;
     }
 
-    iframe {
+    video, iframe {
       width: 100%;
-      height: 100%;
-      border: none;
+      height: 260px;
       display: block;
+      border: none;
+    }
+
+    /* Judul dan deskripsi */
+    .content {
+      padding: 16px;
+    }
+
+    .content h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .content p {
+      margin: 0;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+      color: #888;
     }
 
     @media (max-width: 480px) {
-      .ad-frame {
-        flex: 0 0 70px;
+      video, iframe {
+        height: 220px;
       }
-      .ad-text {
-        font-size: 13px;
-      }
-      .ad-link {
-        font-size: 12px;
+      .banner-ads {
+        height: 70px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="iframe-wrapper">
-    <!-- Bagian atas: iklan -->
-    <div class="ad-frame">
-      <div class="ad-banner">
-        <div class="ad-text">
-<script type="text/javascript">
+  <div class="container">
+    <!-- Bagian Banner Iklan -->
+    <div class="banner-ads">
+      <!-- 🔽 Tempelkan kode banner Adsterra di bawah ini -->
+      <script type="text/javascript">
 	atOptions = {
 		'key' : 'a36fdd372e41b75d0538361ee9fb914f',
 		'format' : 'iframe',
@@ -104,19 +102,34 @@
 	};
 </script>
 <script type="text/javascript" src="//pawgleamed.com/a36fdd372e41b75d0538361ee9fb914f/invoke.js"></script>
+      <div>
+        <p>Tempat Iklan Adsterra</p>
       </div>
     </div>
 
-    <!-- Bagian bawah: video player -->
-    <div class="video-frame">
-      <!-- Iframe video, bisa ganti link YouTube, Vimeo, atau video HTML -->
+    <!-- Bagian Video Player -->
+    <div class="video-player">
+      <!-- Bisa ganti ke <video> HTML5 atau YouTube iframe -->
       <iframe 
         src="https://cdn.videy.co/Eu90W0Vk1.mp4" 
-        title="Video Player" 
+        title="Video Promosi"
         allowfullscreen>
       </iframe>
     </div>
+
+    <!-- Konten Deskripsi -->
+    <div class="content">
+      <h2>Tonton Video dan Dapatkan Hadiahnya!</h2>
+      <p>
+        Nikmati video promosi menarik dari sponsor kami.  
+        Setelah menonton, klik iklan di atas untuk mengetahui promo spesial dari Adsterra partner!
+      </p>
+    </div>
   </div>
+
+  <footer>
+    © 2025 - Landing Page Adsterra Demo by Yudho | Semua hak dilindungi
+  </footer>
 
 </body>
 </html>
